@@ -23,7 +23,7 @@
                                 <div class="token-balance-text">
                                     <h6 class="card-sub-title">Blue-Coin Balance</h6>
                                     <span class="lead"><?php echo $amount; ?>
-                                        <span>Blu</span></span>
+                                        <span>Blue</span></span>
                                 </div>
                             </div>
                             <!-- 
@@ -40,21 +40,11 @@
                                 <!-- ///// -->
                                 <ul class="token-balance-list">
                                     <li class="token-balance-sub">
-                                        <style>
-                                            .white-btn{
-                                                color: #fff !important;
-                                            }
-                                            .white-btn:hover{
-                                                color: #fff !important;
-                                            }
-                                        </style>
-                                        <span class="btn white-btn btn-sm btn-outline btn-primary btn-auto">Buy Data</span>
+                                        <a class="btn btn-sm btn-primary btn-outline btn-auto">Buy Data</a>
                                     </li>
-                                    <li class="token-balance-list">
-
-                                    </li>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <li class="token-balance-sub">
-                                        <span class="btn white-btn btn-sm btn-outline btn-primary btn-auto">Buy Airtime</span>
+                                        <a class="btn btn-sm btn-outline btn-primary btn-auto">Buy Airtime</a>
                                     </li>
                                 </ul>
                             </div>
@@ -266,11 +256,12 @@
                                 </ul>
                                 <div class="gaps-2-5x"></div>
                                 <h6 class="card-title card-title-sm">Receiving Wallet</h6>
-                                        <div class="copy-wrap mgb-0-5x"><span class="copy-feedback"></span><em
-                                        class="fas fa-link"></em><input type="text" class="copy-address"
-                                                value="78ui21yhw281" disabled><button
+                                        <div class="copy-wrap mgb-0-5x">
+                                            <span class="copy-feedback"></span>
+                                            <em class="fas fa-link"></em><input type="text" class="copy-address"
+                                                value="<?php echo $wallet ?>" disabled><button
                                                 class="copy-trigger copy-clipboard"
-                                                data-clipboard-text="78ui21yhw281"><em
+                                                data-clipboard-text="<?php echo $wallet ?>"><em
                                                     class="ti ti-files"></em></button>
                                         </div>  
                             </div>
