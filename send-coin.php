@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
 
-</body>
-
-</html>
 <head>
     <?php
     require('main-header.php');
     require('includes/app.php');
+    require('includes/user-data.php');
+
+    $senderId = $userId;
+    $sender = $wallet; 
 
     $send = new App;
     if (isset($_POST['submit'])) {
         $reciever = $_POST['reciever'];
-        $amount = $_POST['submit'];
-        $message = $_POST['messsage'];
-        $newSend = $send->send($from,$to,$amount,$usrId,$message);
-        // if () {
-        //     # code...
-        // }
+        $amnt = $_POST['amount'];
+        $msg = $_POST['message'];
+        $newSend = $send->send($sender,$reciever,$amnt,$senderId,$msg);
+        if ($newSend) {
+            echo "<script>alert('Successfull')</script>";
+        }else{
+            echo "<script>alert('Failed')</script>";
+        }
     }
 
     ?>
@@ -35,7 +38,7 @@
                             </div>
                             <div class="gaps-1x"></div>
                             <!-- .gaps -->
-                            <form action="#">
+                            <form action="#" method="POST">
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label text-exlight">
                                         Reciever's Wallet Address <sup style="color:red;font-weigth:bolder;">*</sup>
@@ -45,9 +48,34 @@
                                         <span class="input-icon input-icon-right">
                                             <em class="ti ti-image"></em>
                                         </span>
-                                        <input name="reciever" class="input-bordered" type="text" placeholder="Enter the reciever's wallet address">
+                                        <input name="reciever" oninput="checkWallet(this.value)" class="input-bordered" type="text" placeholder="Enter the reciever's wallet address">
                                     </div>
                                 </div>
+                                <script>
+                                    const checkWallet = (wallet) => {
+                                        var usrWallet = "<?php echo $wallet; ?>";
+                                        if (wallet === usrWallet) {
+                                            // alert("You cannot send to yourself");
+                                            document.getElementById('form-btn').style.display = 'none';
+                                            // var p = t(".toastr-warning");
+  
+                                            toastr.clear(), toastr.options = {
+                                                closeButton: !0,
+                                                debug: !1,
+                                                newestOnTop: !0,
+                                                progressBar: !1,
+                                                positionClass: "toast-top-center",
+                                                preventDuplicates: !0,
+                                                showDuration: "1000",
+                                                hideDuration: "10000",
+                                                timeOut: "3000",
+                                                extendedTimeOut: "1000"
+                                            }, toastr.warning('<em class="ti ti-alert toast-message-icon"></em> Sorry, You cannot send Blue-Coin to yourself')
+                                        }else{
+                                            document.getElementById('form-btn').style.display = 'block';
+                                        }
+                                    }
+                                </script>
                                 <div class="input-item input-with-label">
                                     <label class="input-item-label text-exlight">
                                         Amount <sup style="color:red;font-weigth:bolder;">*</sup>
@@ -64,11 +92,11 @@
                                         Message <sup style="color:red;font-weigth:bolder;">*</sup>
                                     </label>
                                     <div class="relative">
-                                        <textarea name="message" placeholder="Enter the message you'll like to show this user" name="" class="input-bordered" rows="5" style="resize:none;"></textarea>
+                                        <textarea name="message" placeholder="Enter the message you'll like to show this user" class="input-bordered" rows="5" style="resize:none;"></textarea>
                                     </div>
                                 </div>
                                 <div class="gaps-1x"></div>
-                                <button type="submit" name="submit" class="btn btn-primary">Send
+                                <button type="submit" id="form-btn" name="submit" class="btn btn-primary">Send
                                     <span class="icon fas fa-paper-plane"></span>
                                 </button>
                             </form>
@@ -113,7 +141,11 @@
                             <p class="text-primary">
                                 Copy and share this wallet with friends to recieve Blue-Coin from them
                             </p>
-                            <div class="copy-wrap mgb-0-5x"><span class="copy-feedback"></span><em class="fas fa-link"></em><input type="text" class="copy-address" value="78ui21yhw281" disabled><button class="copy-trigger copy-clipboard" data-clipboard-text="78ui21yhw281"><em
+                            <div class="copy-wrap mgb-0-5x">
+                                <span class="copy-feedback"></span>
+                                <em class="fas fa-link"></em>
+                                <input type="text" class="copy-address"value="<?php echo $wallet; ?>" disabled>
+                                <button class="copy-trigger copy-clipboard" data-clipboard-text="<?php echo $wallet; ?>"><em
                                                 class="ti ti-files"></em></button>
                             </div>
                             <div class="gaps-2-5x"></div>
@@ -179,6 +211,7 @@
     
     <script src="assets/js/jquery.bundle49f7.js"></script>
     <script src="assets/js/script49f7.js"></script>
+    <script src="assets/js/toastr.examples49f7.js"></script>
 
 </body>
 
