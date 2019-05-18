@@ -31,7 +31,7 @@
                     <div class="content-area card">
                         <div class="card-innr card-innr-fix">
                             <div class="card-head">
-                                <h6 class="card-title">Share Blue-coin with family and friends</h6>
+                                <h6 class="card-title">Share Blue-Coin with family and friends</h6>
                             </div>
                             <div class="gaps-1x"></div>
                             <!-- .gaps -->
@@ -111,7 +111,7 @@
                         <div class="card-innr">
                             <h6 class="card-title card-title-sm">Receiving Wallet</h6>
                             <p class="text-primary">
-                                Copy and share this wallet with friends to recieve Blu-coin from them
+                                Copy and share this wallet with friends to recieve Blue-Coin from them
                             </p>
                             <div class="copy-wrap mgb-0-5x"><span class="copy-feedback"></span><em class="fas fa-link"></em><input type="text" class="copy-address" value="78ui21yhw281" disabled><button class="copy-trigger copy-clipboard" data-clipboard-text="78ui21yhw281"><em
                                                 class="ti ti-files"></em></button>
@@ -129,7 +129,7 @@
                         <div class="token-calculator card card-full-height">
                             <div class="card-innr">
                                 <div class="card-head">
-                                    <h4 class="card-title">Buy Blu-Coin</h4>
+                                    <h4 class="card-title">Buy Blue-Coin</h4>
                                     <p class="card-title-text">Enter amount to calculate token.</p>
                                 </div>
                                 <script>

@@ -34,10 +34,10 @@
                     <ul class="navbar-menu">
                         <li><a href="index-2.html"><em class="ikon ikon-user"></em> Home</a></li>
                         <li><a href="buy-token.html"><em class="ikon ikon-coins"></em> About</a></li>
-                        <li><a href="ico-distribution.html"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
-                        <li><a href="transactions.html"><em class="ikon ikon-distribution"></em> Buy Airtime</a></li>
-                        <li><a href="profile.html"><em class="ikon ikon-distribution"></em> Buy Data</a></li>
-                        <li><a href="profile.html"><em class="ikon ikon-transactions"></em> Send/Recieve</a></li>
+                        <li><a href="dashboard.app"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
+                        <li><a href="buy-airtime.php"><em class="ikon ikon-distribution"></em> Buy Airtime</a></li>
+                        <li><a href="buy-airtime.php"><em class="ikon ikon-distribution"></em> Buy Data</a></li>
+                        <li><a href="send-coin.php"><em class="ikon ikon-transactions"></em> Send/Recieve</a></li>
                     </ul>
                     <ul class="navbar-btns">
                         <li><a href="kyc-application.html" class="btn btn-sm btn-outline btn-light"><em

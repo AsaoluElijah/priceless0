@@ -1,3 +1,9 @@
+<?php
+    require('includes/app.php');
+    require('includes/user-data.php');
+    $dash = new App;
+    $amount = $dash->showAmount($userId) or "Null";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,8 +21,8 @@
                             <div class="token-balance token-balance-with-icon">
                                 <div class="token-balance-icon"><img src="images/logo-light-sm.png" alt="logo"></div>
                                 <div class="token-balance-text">
-                                    <h6 class="card-sub-title">Blu-Coin Balance</h6>
-                                    <span class="lead">0.000
+                                    <h6 class="card-sub-title">Blue-Coin Balance</h6>
+                                    <span class="lead"><?php echo $amount; ?>
                                         <span>Blu</span></span>
                                 </div>
                             </div>
@@ -62,7 +68,7 @@
                                 <div class="token-info"><img class="token-info-icon" src="images/logo-sm.png"
                                         alt="logo-sm">
                                     <div class="gaps-2x"></div>
-                                    <h2 class="token-info-head text-light">1 Blu Coin = 100 NR</h2>
+                                    <h2 class="token-info-head text-light">1 Blue-Coinoin = 100 NR</h2>
                                     <h5 class="token-info-sub">100 NR = 1.05 USD</h5>
                                 </div>
                             </div>
@@ -74,10 +80,12 @@
                                                     class="text-primary">bonus - 15%</span> of the value of contribution.</strong>
                                         </p>
                                         <div class="copy-wrap mgb-0-5x"><span class="copy-feedback"></span><em
-                                                class="fas fa-link"></em><input type="text" class="copy-address"
-                                                value="localhost/invite.php?ref=asa@gmail.com" disabled><button
+                                                class="fas fa-link"></em>
+                                                <input type="text" class="copy-address"
+                                                value="localhost/invite.php?ref=<?php echo $email; ?>" disabled>
+                                                <button
                                                 class="copy-trigger copy-clipboard"
-                                                data-clipboard-text="localhost/invite.php?ref=asa@gmail.com"><em
+                                                data-clipboard-text="localhost/invite.php?ref=<?php echo $email; ?>"><em
                                                     class="ti ti-files"></em></button>
                                         </div>
                                         <!-- .copy-wrap -->
@@ -173,7 +181,7 @@
                     <div class="token-calculator card card-full-height">
                         <div class="card-innr">
                             <div class="card-head">
-                                <h4 class="card-title">Buy Blu-Coin</h4>
+                                <h4 class="card-title">Buy Blue-Coin</h4>
                                 <p class="card-title-text">Enter amount to calculate token.</p>
                             </div>
                             <script>
