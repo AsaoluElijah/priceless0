@@ -167,8 +167,23 @@
             return json_encode($user);
         }
 
+        function buyAirtime($network,$price){
+            $sql = "SELECT * FROM $network WHERE status = 'not_used' AND price = $price LIMIT 1";
+            $result = $this->connect()->query($sql);
+            $row = $result->fetch_array();
+            $numRow = mysqli_num_rows($result);
+            // return $row['code'];
+            if ($numRow <= 0) {
+                return "empty";
+            }else if($numRow > 1){
+                return $row['code'];
+            }
+
+        }
+
     } 
     $app = new App;
+    // echo $app->buyAirtime('mtn',100);
     // header('Content-Type: application/json');
     // $users = $app->listUsers(10,'asc');
     // $myfile = fopen('users.json','w');
